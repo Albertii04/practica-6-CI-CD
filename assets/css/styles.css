@@ -1,0 +1,58 @@
+/* Estilos personalizados para el clon de Evernote */
+
+/* Configuración de fondo general */
+body {
+  background-color: #f5f5f5; /* Color de fondo suave */
+  font-family: Arial, sans-serif; /* Fuente general */
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100vh; /* Altura completa */
+  padding: 20px; /* Espaciado interno */
+  border-right: 1px solid #dee2e6; /* Línea de separación */
+}
+
+/* Estilo de las notas */
+.note-list, .note-editor {
+  padding: 20px; /* Espaciado interno */
+}
+
+.note-list {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.note-editor {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Estilo de la lista de notas */
+.note-list .list-group-item {
+  border: none; /* Eliminar borde */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.note-list .list-group-item:hover {
+  background-color: #e9ecef; /* Color de fondo al pasar el ratón */
+}
+
+/* Estilo del editor de notas */
+.note-editor textarea {
+  width: 100%; /* Ancho completo */
+  border: 1px solid #ced4da; /* Borde gris */
+  border-radius: 4px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+}
+
+/* Botón de guardar */
+.note-editor button {
+  width: 100%; /* Ancho completo */
+  margin-top: 10px; /* Espacio superior */
+}
+
+/* Estilo del encabezado */
+h2, h3 {
+  color: #343a40; /* Color del texto del encabezado */
+}

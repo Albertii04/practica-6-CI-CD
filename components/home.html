@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvingut a Everyday Notes!</title>
+    <link rel="stylesheet" href="components/scss/custom.css"> <!-- Add this line to include your stylesheet -->
+</head>
+<body>
+    <h1>Bienvingut a Everyday Notes!</h1>
+    <h2>Notes</h2>
+    <div id="notes"></div>
+    <button id="create-note-button" class="create-button" style="display: none;">Crear Nota</button>
+    <h2>Tasques</h2>
+    <div id="tasks"></div>
+    <button id="create-task-button" class="create-button" style="display: none;">Crear Tasca</button>
+    <div id="tasks-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const notesContainer = document.getElementById('notes');
+            const tasksContainer = document.getElementById('tasks-container');
+            const createNoteButton = document.getElementById('create-note-button');
+            const createTaskButton = document.getElementById('create-task-button');
+
+            // Load notes from local storage
+            const notes = JSON.parse(localStorage.getItem('notes')) || [];
+
+            if (notes.length === 0) {
+                createNoteButton.style.display = 'block';
+            } else {
+                notes.forEach(note => {
+                    const card = document.createElement('div');
+                    card.className = 'home card note-item';
+                    card.style.width = '200px'; // Set width for post-it style
+                    card.style.height = '200px'; // Set height for post-it style
+                    card.style.margin = '10px'; // Add some margin between post-its
+                    card.style.display = 'inline-block'; // Display as inline-block to align like post-its
+
+                    const cardHeader = document.createElement('div');
+                    cardHeader.className = 'card-header';
+
+                    const title = document.createElement('h2');
+                    title.textContent = note.title;
+
+                    const date = document.createElement('span');
+                    date.textContent = new Date(note.date).toLocaleDateString();
+
+                    cardHeader.appendChild(title);
+                    cardHeader.appendChild(date);
+
+                    const cardBody = document.createElement('div');
+                    cardBody.className = 'card-body';
+                    cardBody.textContent = note.content;
+
+                    card.appendChild(cardHeader);
+                    card.appendChild(cardBody);
+
+                    notesContainer.appendChild(card);
+                });
+            }
+
+            // Load tasks from local storage
+            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+            if (tasks.length === 0) {
+                createTaskButton.style.display = 'block';
+            } else {
+                tasks.forEach(task => {
+                    const taskItem = document.createElement('div');
+                    taskItem.className = 'task-item post-it';
+                    taskItem.style.width = '25%'; // Set width for post-it style
+                    taskItem.style.height = '200px'; // Set height for post-it style
+                    taskItem.style.margin = '10px'; // Add some margin between post-its
+                    taskItem.style.display = 'inline-block'; // Display as inline-block to align like post-its
+
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.checked = task.completed;
+                    checkbox.className = 'form-check-input';
+
+                    const label = document.createElement('label');
+                    label.textContent = task.text;
+                    label.className = 'form-check-label';
+
+                    // Sync checkbox state with local storage
+                    checkbox.addEventListener('change', function() {
+                        task.completed = checkbox.checked;
+                        localStorage.setItem('tasks', JSON.stringify(tasks));
+                    });
+
+                    taskItem.appendChild(checkbox);
+                    taskItem.appendChild(label);
+
+                    tasksContainer.appendChild(taskItem);
+                });
+            }
+
+            createNoteButton.addEventListener('click', function() {
+                window.location.href = 'index.php?page=notes'; // Change this to the actual URL of your create note page
+            });
+
+            createTaskButton.addEventListener('click', function() {
+                window.location.href = 'index.php?page=tasks'; // Change this to the actual URL of your create task page
+            });
+        });
+    </script>
+</body>
+</html>

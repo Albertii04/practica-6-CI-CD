@@ -1,0 +1,26 @@
+<head></head>
+    <link rel="stylesheet" href="/components/scss/custom.css">
+</head>
+<nav class="navbar navbar-light">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Llibreta de User</span>
+        <div>
+            <span class="me-3">Last edited on Oct 7, 2024</span>
+            <button class="btn btn-outline-secondary">Compartir nota</button>
+        </div>
+    </div>
+</nav>
+<div class="note-editor p-3">
+    <!-- Título de la nota -->
+    <input type="text" id="note-title" class="form-control mb-3" placeholder="Note Title">
+
+    <!-- Contenido de la nota -->
+    <textarea id="note-content" class="form-control mb-3" rows="10" placeholder="Note Content"></textarea>
+
+    <!-- Botón para guardar la nota -->
+    <button id="save-button" class="btn btn-success" onclick="addNote()">Guardar nota</button>
+
+    <!-- Mensaje de confirmación o errores -->
+    <div id="message" class="mt-3 text-success" style="display: none;">Nota guardada correctament!</div>
+    <div id="error" class="mt-3 text-danger" style="display: none;">Si us plau, escriu tant el títol com el contingut</div>
+</div>

@@ -1,0 +1,256 @@
+// Espacio para modificar el estilo de la aplicación definido por Bootstrap
+
+$primary: #000000;
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Espacio para agregar estilos personalizados
+
+
+  
+  .sidebar {
+    background-color: #f5f5f5;
+    height: 100vh;
+    padding: 20px;
+    border-right: solid;
+    border-color: rgb(73, 73, 73);
+  }
+  
+  .note-list {
+    background-color: #fafafa;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+  }
+  
+  .note-editor {
+    padding: 20px;
+  }
+  
+  .note-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  
+  .note-item:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .btn-note, .btn-task, .btn-event {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+#search{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-checkbox {
+  margin-right: 10px;
+}
+
+.task-text {
+  font-size: 16px;
+  flex-grow: 1;
+}
+
+
+// Estilos personalizados para un diseño similar a Evernote
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn {
+  display: inline-block;
+  width: 50%;
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #28a745;
+  border: 1px solid #28a745;
+  border-radius: 4px;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.create-button {
+  display: inline-block;
+  width: 10%;
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #28a745;
+  border: 1px solid #28a745;
+  border-radius: 4px;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn-1 {
+  display: inline-block;
+  width: 100%;
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #28a745;
+  border: 1px solid #28a745;
+  border-radius: 4px;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.card.note-item {
+  background-color: #d7ecbf; /* Color amarillo */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* Sombra para efecto de elevación */
+  padding: 10px;
+  margin: 10px 0;
+
+}
+.home.card.note-item {
+  background-color: #c6ff84; /* Color amarillo */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* Sombra para efecto de elevación */
+  padding: 10px;
+  margin: 10px 0;
+  max-width: 50%;
+}
+
+.card-header {
+  background-color: transparent; /* Fondo transparente para el encabezado */
+  border-bottom: none; /* Sin borde inferior */
+}
+
+.card-body {
+  background-color: transparent; /* Fondo transparente para el cuerpo */
+}
+
+/* Estilos personalizados para formularios de login y registro */
+.form-container {
+  max-width: 600px;
+  width: 100%;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.form-container h1 {
+  font-size: 28px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-container .form-group {
+  margin-bottom: 20px;
+}
+
+.form-container .form-control {
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.form-container .btn {
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.form-container p {
+  text-align: center;
+  margin-top: 20px;
+}
+.col-4{
+  margin-top: 200;
+}
